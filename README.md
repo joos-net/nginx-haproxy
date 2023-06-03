@@ -34,12 +34,12 @@
 haproxy.cfg
 ```
 frontend example  # секция фронтенд
-        mode http
+        mode tcp
         bind :8088
         default_backend web_servers
 
 backend web_servers    # секция бэкенд
-        mode http
+        mode tcp
         balance roundrobin
         option httpchk
         http-check send meth GET uri /index.html
